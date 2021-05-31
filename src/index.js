@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { DataLayer } from "./Essentials/DataLayer";
+import { DataLayerProvider } from "./Essentials/DataLayer";
+import reducer, { initialState } from "./Essentials/reducer";
 
 import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <DataLayer initialState reducaer>
+    <DataLayerProvider initialState={initialState} reducer={reducer}>
       <App />
-    </DataLayer>
+    </DataLayerProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
